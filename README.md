@@ -1,5 +1,7 @@
 <a name="readme-top"></a>
-
+<div>
+  <h1>School Library</h1>
+  </div>
 <!--
 HOW TO USE:
 This is an example of how you may give instructions on setting up your project locally.
