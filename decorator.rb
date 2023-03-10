@@ -8,6 +8,7 @@ end
 # Base Decorator
 class NameDecorator < Nameable
   def initialize(nameable)
+    super()
     @nameable = nameable
   end
 
@@ -35,7 +36,7 @@ end
 # Person class decorated with Capitalize and Trimmer decorators
 class Person < Nameable
   attr_accessor :name, :age
-
+  super()
   def initialize(age, name)
     @name = name
     @age = age
