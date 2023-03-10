@@ -12,11 +12,16 @@ class Classroom
   end
 end
 
-class Student
-  attr_accessor :name, :classroom
+class Student < Person
+  attr_accessor :name
 
   def initialize(name)
     @name = name
+  end
+
+  def classroom=(classroom)
+    @classroom = classroom
+    classroom.students.push(self) unless classroom.students.include?(self)
   end
 end
 
@@ -40,6 +45,10 @@ class Book
     @author = author
     @rentals = []
   end
+
+  def add_rental(person, date)
+    Rental.new(date, self, person)
+  end
 end
 
 class Person
@@ -48,5 +57,9 @@ class Person
   def initialize(name)
     @name = name
     @rentals = []
+  end
+
+  def add_rental(book, date)
+    Rental.new(date, book, self)
   end
 end
