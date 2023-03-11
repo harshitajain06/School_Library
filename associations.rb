@@ -12,20 +12,6 @@ class Classroom
   end
 end
 
-class Student < Person
-  attr_accessor :name
-
-  def initialize(name)
-    super()
-    @name = name
-  end
-
-  def classroom=(classroom)
-    @classroom = classroom
-    classroom.students.push(self) unless classroom.students.include?(self)
-  end
-end
-
 class Rental
   attr_accessor :book, :person, :date
 
@@ -62,5 +48,19 @@ class Person
 
   def add_rental(book, date)
     Rental.new(date, book, self)
+  end
+end
+
+class Student < Person
+  attr_accessor :name
+
+  def initialize(name)
+    super()
+    @name = name
+  end
+
+  def classroom=(classroom)
+    @classroom = classroom
+    classroom.students.push(self) unless classroom.students.include?(self)
   end
 end
