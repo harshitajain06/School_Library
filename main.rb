@@ -1,5 +1,9 @@
 require_relative 'app'
 require_relative 'choose'
+require_relative 'storage'
+
+include SaveData
+include LoadData
 
 def main
   app = App.new
