@@ -82,6 +82,13 @@ A basic understanding of Ruby and Git
 
 - GitHub: [@harshita](https://github.com/harshitajain06/)
 - LinkedIn: [@harshita](https://www.linkedin.com/in/harshitajain06/)
+
+👤 **Jonah Wambua**
+
+- GitHub [link](https://github.com/DJ-MrJay)
+- Twitter [link](https://twitter.com/jonah_wambua)
+- LinkedIn [link](https://www.linkedin.com/in/jonah-wambua/)
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>

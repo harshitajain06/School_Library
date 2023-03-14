@@ -1,11 +1,13 @@
 require_relative 'app'
+require_relative 'choose'
 
 def main
   app = App.new
+  choose = Choose.new
   loop do
     display_menu_options
     choice = gets.chomp.to_i
-    handle_menu_choice(choice, app)
+    choose.handle_menu_choice(choice, app)
     break if choice == 7
   end
   puts 'Exiting the Library Management System. Goodbye!'
@@ -21,24 +23,4 @@ def display_menu_options
   puts '6. List all rentals for a given person id'
   puts '7. Quit'
 end
-
-def handle_menu_choice(choice, app)
-  case choice
-  when 1
-    app.list_books
-  when 2
-    app.list_people
-  when 3
-    app.create_person
-  when 4
-    app.create_book
-  when 5
-    app.create_rental
-  when 6
-    app.list_rentals_by_person_id
-  else
-    puts 'Invalid choice. Please choose again.'
-  end
-end
-
 main
