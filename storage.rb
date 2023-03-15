@@ -8,12 +8,8 @@ require_relative 'teacher'
 module SaveData
   def check_file(filename)
     FileUtils.mkdir_p('./storage')
-    if !File.exist?('./storage/people.json') && filename == 'people'
-      FileUtils.touch('./storage/people.json')
-    end
-    if !File.exist?('./storage/rentals.json') && filename == 'rentals'
-      FileUtils.touch('./storage/rentals.json')
-    end
+    FileUtils.touch('./storage/people.json') if !File.exist?('./storage/people.json') && filename == 'people'
+    FileUtils.touch('./storage/rentals.json') if !File.exist?('./storage/rentals.json') && filename == 'rentals'
     FileUtils.touch('./storage/books.json') if !File.exist?('./storage/books.json') && filename == 'books'
   end
 
