@@ -57,7 +57,7 @@ class App
     person = Person.new(age, name, parent_permission: true)
     teacher_json = {
       age: teacher.age,
-      specialization: teacher.name,
+      specialization: teacher.specialization,
       name: teacher.name,
       id: person.id
     }
