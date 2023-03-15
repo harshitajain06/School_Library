@@ -2,6 +2,7 @@ class Choose
   def handle_menu_choice(choice, app)
     case choice
     when 1
+      app.load_books
       app.list_books
     when 2
       app.list_people
@@ -9,6 +10,7 @@ class Choose
       app.create_person
     when 4
       app.create_book
+      app.save_books
     when 5
       app.create_rental
     when 6

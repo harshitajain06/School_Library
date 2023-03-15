@@ -2,6 +2,7 @@ require_relative 'teacher'
 require_relative 'student'
 require_relative 'book'
 require_relative 'rental'
+require 'json'
 
 class App
   attr_reader :classrooms, :students, :books, :people, :rentals
@@ -9,15 +10,28 @@ class App
   def initialize
     @classrooms = []
     @students = []
-    @books = []
+    @books = load_books || []
     @people = []
     @rentals = []
   end
 
+  def save_books
+    File.open('./data/books.json', 'w') do |f|
+      f.write(JSON.pretty_generate(@books))
+    end
+  end
+
+  def load_books
+    if File.exist?('./data/books.json')
+      @books = JSON.parse(File.read('./data/books.json'))
+    else
+      @books = []
+    end
+  end
+
   def list_books
-    puts 'All books:'
-    @books.each do |book|
-      puts "Title: #{book.title}, Author: #{book.author}"
+    @books.each_with_index do |book, index|
+      puts "#{index + 1}. Title: #{book['title']}, Author: #{book['author']}"
     end
   end
 
@@ -87,8 +101,13 @@ class App
     puts 'Author:'
     author = gets.chomp
     book = Book.new(title, author)
-    @books << book
+    book_json = {
+    title: book.title,
+    author: book.author,
+    }
+    @books << book_json
     puts "Book #{title} created successfully."
+    puts @books
   end
 
   def create_rental
