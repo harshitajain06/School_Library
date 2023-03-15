@@ -43,7 +43,7 @@ module SaveData
     File.write('./storage/people.json', JSON.pretty_generate(people_data))
   end
 
-  def save_rentals(rentals)
+  def save_rentals
     rental_arr = []
     rentals.each do |rental|
       rental_prop = {
