@@ -1,15 +1,15 @@
 [
   {
-    "id": 154,
-    "name": "Paul",
-    "age": 16,
+    "id": 587,
+    "name": "Joy",
+    "age": "3F",
     "json_class": "Student",
-    "classroom": "5B",
-    "parent_permission": false
+    "classroom": 16,
+    "parent_permission": true
   },
   {
-    "id": 70,
-    "name": "James",
+    "id": 493,
+    "name": "Roy",
     "age": 45,
     "json_class": "Teacher",
     "specialization": "Math"
