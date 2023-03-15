@@ -1,23 +1,32 @@
-require_relative 'teacher'
+require_relative 'person'
 require_relative 'student'
+require_relative 'teacher'
 require_relative 'book'
 require_relative 'rental'
+require_relative 'storage'
 
 class App
-  attr_reader :classrooms, :students, :books, :people, :rentals
+  attr_accessor :books, :people, :rentals
+
+  include SaveData
+  include LoadData
 
   def initialize
-    @classrooms = []
-    @students = []
-    @books = []
-    @people = []
-    @rentals = []
+    @books = load_books
+    @people = load_people
+    @rentals = load_rentals
   end
 
   def list_books
-    puts 'All books:'
-    @books.each do |book|
-      puts "Title: #{book.title}, Author: #{book.author}"
+    load_books
+    if @books.empty?
+      puts
+      puts 'No books found'
+    else
+      puts 'All books:'
+      @books.each do |book|
+        puts "Title: #{book.title}, Author: #{book.author}"
+      end
     end
   end
 
@@ -54,6 +63,7 @@ class App
     specialization = gets.chomp
     teacher = Teacher.new(age, specialization, name)
     @people << teacher
+    save_people
     puts 'Teacher created successfully'
   end
 
@@ -63,17 +73,21 @@ class App
     age = gets.chomp.to_i
     puts 'Name:'
     name = gets.chomp
-    classroom = 2
+    puts 'Classroom:'
+    classroom = gets.chomp.upcase
     puts 'Has parent permission? [Y/N]:'
     parent_permission = gets.chomp.downcase
+    
     case parent_permission
     when 'y'
       student = Student.new(age, classroom, name, parent_permission: true)
       @people << student
+      save_people
       puts 'Student created successfully'
     when 'n'
       student = Student.new(age, classroom, name, parent_permission: false)
       @people << student
+      save_people
       puts 'Student created successfully'
     else
       puts 'Invalid option'
@@ -89,6 +103,7 @@ class App
     book = Book.new(title, author)
     @books << book
     puts "Book #{title} created successfully."
+    save_books
   end
 
   def create_rental
@@ -111,6 +126,7 @@ class App
     date = gets.chomp.to_s
     rental = Rental.new(date, tem_person[person_id], @books[book_id])
     @rentals << rental
+    save_rentals
     puts 'Rental created successfully'
   end
 
