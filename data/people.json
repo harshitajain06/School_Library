@@ -1,0 +1,20 @@
+[
+  {
+    "age": 22,
+    "name": "ee",
+    "parent_permission": true,
+    "id": 549
+  },
+  {
+    "age": 22,
+    "specialization": "tyuu",
+    "name": "tyuu",
+    "id": 363
+  },
+  {
+    "age": 33,
+    "specialization": "rrr",
+    "name": "rrr",
+    "id": 817
+  }
+]
