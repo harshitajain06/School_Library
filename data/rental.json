@@ -37,5 +37,18 @@
       "name": "rrr",
       "id": 817
     }
+  },
+  {
+    "date": "12/12/2022",
+    "book": {
+      "title": "new",
+      "author": "new"
+    },
+    "person": {
+      "age": 33,
+      "specialization": "rrr",
+      "name": "rrr",
+      "id": 817
+    }
   }
 ]
