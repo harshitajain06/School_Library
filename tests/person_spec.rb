@@ -1,4 +1,3 @@
-require 'rspec'
 require_relative 'person'
 
 describe Person do

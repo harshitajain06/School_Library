@@ -1,5 +1,4 @@
-require 'rspec'
-
+require_relative 'student'
 describe Student do
   let(:age) { 10 }
   let(:classroom) { '5A' }
