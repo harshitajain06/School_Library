@@ -1,0 +1,41 @@
+[
+  {
+    "date": "2088-07-06",
+    "person_id": {
+      "age": 22,
+      "name": "ee",
+      "parent_permission": true,
+      "id": 549
+    },
+    "book_id": {
+      "title": "new",
+      "author": "new"
+    }
+  },
+  {
+    "date": "2033-05-03",
+    "person_id": {
+      "age": 33,
+      "specialization": "rrr",
+      "name": "rrr",
+      "id": 817
+    },
+    "book_id": {
+      "title": "gteat",
+      "author": "gatsby"
+    }
+  },
+  {
+    "date": "2099-04-03",
+    "book": {
+      "title": "new",
+      "author": "new"
+    },
+    "person": {
+      "age": 33,
+      "specialization": "rrr",
+      "name": "rrr",
+      "id": 817
+    }
+  }
+]

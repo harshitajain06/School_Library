@@ -124,6 +124,6 @@ If you like this project please give a⭐️ and share with your friends.
 
 ## 📝 License <a name="license"></a>
 
-This project is [MIT](https://github.com/harshitajain06/School_Library/MIT.md) licensed.
+This project is [MIT](https://github.com/harshitajain06/School_Library/blob/storing_data/MIT.md) licensed.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
