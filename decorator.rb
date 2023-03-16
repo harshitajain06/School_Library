@@ -1,11 +1,9 @@
-# Interface
 class Nameable
   def correct_name
     raise NotImplementedError, 'Subclasses must implement this method'
   end
 end
 
-# Base Decorator
 class NameDecorator < Nameable
   attr_accessor :nameable
 
@@ -19,14 +17,12 @@ class NameDecorator < Nameable
   end
 end
 
-# CapitalizeDecorator
 class CapitalizeDecorator < NameDecorator
   def correct_name
     super.capitalize
   end
 end
 
-# TrimmerDecorator
 class TrimmerDecorator < NameDecorator
   MAX_LENGTH = 10
 
@@ -35,7 +31,6 @@ class TrimmerDecorator < NameDecorator
   end
 end
 
-# Person class decorated with Capitalize and Trimmer decorators
 class Person < Nameable
   attr_accessor :name, :age
 
