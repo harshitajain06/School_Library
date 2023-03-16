@@ -1,18 +1,19 @@
-require_relative 'rental'
+require_relative '../rental'
 
 describe Rental do
-  let(:date) { '2022-01-01' }
-  let(:person) { double('person') }
-  let(:book) { double('book') }
-  subject { described_class.new(date, person, book) }
+  describe '#initialize' do
+    it 'creates a new Rental object' do
+      rental = Rental.new('date', 'person', 'book')
+      expect(rental).to be_an_instance_of Rental
+    end
+  end
 
   describe '#to_h' do
-    it 'returns a hash with date, book, and person' do
-      expect(subject.to_h).to eq({
-        date: date,
-        book: book.to_h,
-        person: person.to_h
-      })
+    it 'returns a hash of the rental object' do
+      book = double('book', to_h: {})
+      person = double('person', to_h: {})
+      rental = Rental.new('date', person, book)
+      expect(rental.to_h).to eq({ date: 'date', book: {}, person: {} })
     end
   end
 end
