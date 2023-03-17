@@ -10,7 +10,7 @@ describe Teacher do
 
   describe '#can_use_services?' do
     it 'returns true' do
-      teacher = Teacher.new(30, 'specialization', 'name')
+      teacher = Teacher.new(20, 'coding', 'Harshita')
       expect(teacher.can_use_services?).to eq(true)
     end
   end
